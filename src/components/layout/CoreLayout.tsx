@@ -6,9 +6,13 @@ const CoreLayout = () => {
     return (
         <>
             <CoreHeader />
-            <div className="flex">
-                <CoreSidebar />
-                <div className="w-full pt-20 pl-60 pr-5">
+
+            <div className="lg:flex">
+                <div className="hidden lg:block">
+                    <CoreSidebar />
+                </div>
+
+                <div className="w-full pt-20 lg:pl-60 lg:pr-5">
                     <Outlet />
                 </div>
             </div>
