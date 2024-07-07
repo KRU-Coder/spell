@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import ReactPaginate from 'react-paginate'
 import SpellList from '../../components/spell/SpellList'
@@ -73,8 +73,7 @@ const LandingPage = () => {
                         breakLabel="..."
                         pageRangeDisplayed={5}
                         pageCount={Math.ceil(itemLength / 10)}
-                        renderOnZeroPageCount={null}
-                        className="flex items-center flex-wrap gap-5 text-secondary-500"
+                        className="w-full flex items-center flex-wrap gap-5 text-secondary-500"
                         onPageChange={({ selected }) =>
                             setActivePage(selected + 1)
                         }
