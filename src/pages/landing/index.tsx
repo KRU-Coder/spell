@@ -47,7 +47,11 @@ const LandingPage = () => {
 
     return (
         <div className="lg:h-full">
-            <div className="lg:grid lg:grid-cols-2 lg:gap-5 mt-5 transition-all">
+            <div
+                className={`lg:grid ${
+                    activeIndex ? 'lg:grid-cols-2' : 'lg:grid-cols-1'
+                }  lg:gap-5 mt-5 transition-all`}
+            >
                 <div className="space-y-2 p-3 rounded-md">
                     {items?.map((item: ISpell) => {
                         return (
@@ -79,17 +83,19 @@ const LandingPage = () => {
                         }
                     />
                 </div>
-                <div className="border lg:h-[80vh] rounded-md overflow-y-auto">
-                    {spellDetailsLoading ? (
-                        <LoadingState label="Please Wait..." />
-                    ) : spellDetailsError ? (
-                        <ErrorState message="Error Loading Details" />
-                    ) : (
-                        <div className="hidden lg:block">
-                            <SpellDetails {...spellDetailsResp} />
-                        </div>
-                    )}
-                </div>
+                {activeIndex && (
+                    <div className="border lg:h-[80vh] rounded-md overflow-y-auto">
+                        {spellDetailsLoading ? (
+                            <LoadingState label="Please Wait..." />
+                        ) : spellDetailsError ? (
+                            <ErrorState message="Error Loading Details" />
+                        ) : (
+                            <div className="hidden lg:block">
+                                <SpellDetails {...spellDetailsResp} />
+                            </div>
+                        )}
+                    </div>
+                )}
             </div>
         </div>
     )

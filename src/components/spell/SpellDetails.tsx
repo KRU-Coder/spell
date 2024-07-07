@@ -1,7 +1,12 @@
+import { useDispatch, useSelector } from 'react-redux'
 import { ISpellDetails } from '../../types/spell'
 import DurationIcon from '../common/icons/DurationIcon'
 import LevelIcon from '../common/icons/LevelIcon'
 import RangeIcon from '../common/icons/RangeIcons'
+import { IoCloseOutline } from 'react-icons/io5'
+import { addFav, setSpellIndex } from '../../redux/reducer/spell'
+import { IoMdHeart, IoMdHeartEmpty } from 'react-icons/io'
+import { IRoot } from '../../types/rootState'
 
 const SpellDetails = ({
     casting_time,
@@ -16,14 +21,51 @@ const SpellDetails = ({
     school,
     subclasses,
 }: ISpellDetails) => {
+    const dispatch = useDispatch()
+    const isFav = useSelector((state: IRoot) =>
+        state.spells.favs.includes(name)
+    )
+    const handleClose = () => {
+        dispatch(setSpellIndex(null))
+    }
+    const handleFavAdd = () => {
+        dispatch(addFav(name))
+    }
+    const handleFavRemove = () => {
+        dispatch(addFav(name))
+    }
     return (
         <div>
-            <div className="w-full  bg-secondary-50 px-3 py-6">
+            <div className="w-full  bg-secondary-50 px-3 py-6 relative">
                 <div>
                     <div className="text-xl font-bold text-primary-700 text-center mb-2">
                         {name}
                     </div>
                     <p className="text-sm text-secondary-500">{desc}</p>
+                </div>
+                <div className="absolute top-2 right-2  flex items-center gap-5">
+                    {!isFav ? (
+                        <button
+                            className="text-primary-700 text-lg"
+                            onClick={handleFavRemove}
+                        >
+                            <IoMdHeartEmpty />
+                        </button>
+                    ) : (
+                        <button
+                            className="text-primary-700 text-lg"
+                            onClick={handleFavAdd}
+                        >
+                            <IoMdHeart />
+                        </button>
+                    )}
+
+                    <button
+                        className=" w-4 h-4 bg-red-500  text-xs text-white rounded-full flex items-center justify-center"
+                        onClick={handleClose}
+                    >
+                        <IoCloseOutline />
+                    </button>
                 </div>
             </div>
             <div className="p-3">

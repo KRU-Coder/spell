@@ -5,6 +5,7 @@ export interface IRoot {
         items: ISpell[]
         currentPage: number
         itemsPerPage: number
-        activeIndex: string
+        activeIndex: string | null
+        favs: string[]
     }
 }
