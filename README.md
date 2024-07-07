@@ -41,6 +41,9 @@ Once the app is running, you can:
 ## Technologies Used
 - React.js
 - React Router (for navigation)
+- Redux toolkit
+- Tanstack Query
+- Jest (for testing)
 - Tailwindcss  (for styling)
 
 

@@ -11,7 +11,7 @@ const CoreHeader = () => {
                     />
                 </div>
                 <strong className="font-bold text-primary-700 text-xl">
-                    My Spell
+                    Spell
                 </strong>
             </div>
         </div>
