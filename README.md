@@ -6,7 +6,7 @@ The Spell is a web application built using React.js that allows users to browse 
 ## Features
 - **Spell List**: Paginated display of spells fetched from the D&D 5e API.
 - **Spell Details**: Detailed view of each spell, including attributes and descriptions.
-- **Pagination**: Navigate through multiple pages of spell listings.
+- **Favourite Spell**: List of Favourite Spells.
 - **Responsive Design**: Ensures usability on various screen sizes.
 
 ## Installation
