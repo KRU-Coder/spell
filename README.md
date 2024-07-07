@@ -35,22 +35,23 @@ To run the Spell List React App locally, follow these steps:
 ## Usage
 Once the app is running, you can:
 
-Browse through the list of spells fetched from the D&D 5e API.
-Click on any spell to view its detailed information.
-Navigate between pages using the pagination controls.
+- Browse through the list of spells fetched from the D&D 5e API.
+- Click on any spell to view its detailed information.
+
 ## Technologies Used
-React.js
-React Router (for navigation)
-Tailwindcss  (for styling)
+- React.js
+- React Router (for navigation)
+- Tailwindcss  (for styling)
 
 
 
-my_spell/
+spell/
 ├── public/
 ├── src/
-│   ├── components/spell
-│   │   ├── SpellList.js
-│   │   ├── SpellDetails.js
+│   ├── components/
+│   │   ├── spell/
+│   │   │   ├── SpellList.js
+│   │   │   ├── SpellDetails.js
 │   ├── pages/
 │   │   ├── Landing.tsx
 │   ├── services/
@@ -63,17 +64,10 @@ my_spell/
 └── README.md
 
 
-## Contributing
-Contributions are welcome! If you'd like to contribute to the project, please follow these steps:
 
-Fork the repository and clone it locally.
-Create a new branch for your feature or bug fix.
-Make your changes and test thoroughly.
-Commit your changes with clear messages.
-Push your changes to your fork.
-Submit a pull request explaining the changes made.
 
 
 
 ## License
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
